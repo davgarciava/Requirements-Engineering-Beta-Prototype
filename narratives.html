@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Game Design Best Practices</title>
+    <link rel="icon" type="image/png" href="img/GDBP_Logo.png">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-lg bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-auto" href="index.html"><img src="img/GDBP_Logo.png" height="90" width="90"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item bg-light d-flex align-items-center">
+                            <a class="nav-link text-lg-center" href="about_practices.html">About the practices</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="learning_goals.html">Goal-oriented<br>requirements specification</a>
+                    </li>
+                    <li class="nav-item bg-primary d-flex align-items-center">
+                        <a class="nav-link text-lg-center text-white active" href="story.html">Formal design of<br>the game world</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Incremental design of<br>the rules of the game</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Audiovisual design of<br>the game style</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Evolutionary design of<br>game interfaces</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="game_design_document.html">Generation of the<br>game design document</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="confirmDeleteModal" class="modal fade">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation to delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <p class="text-center">Are you sure you want to delete the narrative with <b id="delete-order-text">Chronological order = 0</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-danger mx-auto" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success mx-auto" id="delete_narrative" data-bs-dismiss="modal">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmEditModal" class="modal fade">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation to edit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <p class="text-center">Are you sure you want to edit the narrative with <b id="edit-order-text">Chronological order = 0</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-danger mx-auto" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success mx-auto" id="edit_narrative" data-bs-dismiss="modal">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="creationModal" class="modal fade">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Warning on creation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <p class="text-center">The chronological order of each narrative must be unique!<br><br>If you must change the order, do so in such a way that the order of two narratives does not overlap.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-primary mx-auto" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-content mt-5 mb-3">
+            <div class="col">
+                <h4 class="text-center">Practice: Formal design of the game world</h4>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="story.html">Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="characters.html">Characters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="narratives.html">Narratives</a>
+                    </li>
+                </ul>
+                <div class="tab-content border border-2 border-top-0 border-primary rounded-bottom">
+                    <div class="row row-content mx-1">
+                        <div class="col-12 col-lg-5 py-4" id="create">
+                            <h5 class="text-center">Proposal of new narrative</h5><br>
+                            <form id="createNarrativesForm" method="POST" action="" autocomplete="off">
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="chronological_order" class="form-label text-end">Chronological order</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="number" class="form-control" id="chronological_order" name="chronological_order" min="1" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="topic" class="form-label text-end">Topic</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <textarea class="form-control" id="topic" rows="3" name="topic" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="dialog" class="form-label text-end">Dialog</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <textarea class="form-control" id="dialog" rows="3" name="dialog" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="emotional_element" class="form-label text-end">Emotional element</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="emotional_element" name="emotional_element" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="character" class="form-label text-end">Character</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <select class="form-select" id="character" name="character" required>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="offset-4 col-3 col-lg-4 offset-lg-4 d-grid gap-2">
+                                        <button type="reset" class="btn btn-danger">Clear</button>
+                                    </div>
+                                    <div class="col-3 col-lg-4 d-grid gap-2">
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                    </div>
+                                </div>  
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-5 py-4" id="edit">
+                            <h5 class="text-center">Edition of narrative</h5><br>
+                            <form id="editNarrativesForm" method="POST" action="" autocomplete="off">
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_chronological_order" class="form-label text-end">Chronological order</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="number" class="form-control" id="edit_chronological_order" name="edit_chronological_order" min="1" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_topic" class="form-label text-end">Topic</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <textarea class="form-control" id="edit_topic" rows="3" name="edit_topic" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_dialog" class="form-label text-end">Dialog</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <textarea class="form-control" id="edit_dialog" rows="3" name="edit_dialog" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_emotional_element" class="form-label text-end">Emotional element</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="edit_emotional_element" name="edit_emotional_element" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_character" class="form-label text-end">Character</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <select class="form-select" id="edit_character" name="edit_character" required>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="offset-4 col-3 col-lg-4 offset-lg-4 d-grid gap-2">
+                                        <button type="button" class="btn btn-danger" id="returnEditButton">Return</button>
+                                    </div>
+                                    <div class="col-3 col-lg-4 d-grid gap-2">
+                                        <button type="button" class="btn btn-success" id="narrativesEditButton">Save</button>
+                                    </div>
+                                </div>   
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-7 py-4">
+                            <h5 class="text-center">Management of existing narratives</h5><br>
+                            <div class="table-responsive mx-4">
+                                <div class="">
+                                    <table class="table table-striped table-hover table-bordered border border-dark border-2">
+                                        <thead class="table-dark align-middle">
+                                            <tr>
+                                            <th scope="col">Chronological order</th>
+                                            <th scope="col">Topic</th>
+                                            <th scope="col">Dialog</th>
+                                            <th scope="col">Emotional element</th>
+                                            <th scope="col">Character</th>
+                                            <th scope="col">Management</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-body">
+                                            
+                                        </tbody>
+                                    </table>
+                                    <div class="container d-flex justify-content-end my-3">
+                                        <div id="pagination-wrapper"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content my-3"></div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/localstoragedb/localstoragedb.js"></script>
+    <script src="js/narratives.js"></script>
+</body>
+
+</html>

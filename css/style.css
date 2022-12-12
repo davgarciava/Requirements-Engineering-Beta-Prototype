@@ -1,0 +1,10 @@
+.nav-tabs {
+    border-width: 2px;
+    border-color: RGBA(13, 110, 253, var(--bs-bg-opacity, 1));
+}
+
+.nav-tabs .nav-link.active {
+    background: RGBA(13, 110, 253, var(--bs-bg-opacity, 1));
+    color: white;
+    border-color: RGBA(13, 110, 253, var(--bs-bg-opacity, 1));
+}

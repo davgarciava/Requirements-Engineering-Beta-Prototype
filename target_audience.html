@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Game Design Best Practices</title>
+    <link rel="icon" type="image/png" href="img/GDBP_Logo.png">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-lg bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-auto" href="index.html"><img src="img/GDBP_Logo.png" height="90" width="90"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item bg-light d-flex align-items-center">
+                            <a class="nav-link text-lg-center" href="about_practices.html">About the practices</a>
+                    </li>
+                    <li class="nav-item bg-primary d-flex align-items-center">
+                        <a class="nav-link text-lg-center text-white active" href="learning_goals.html">Goal-oriented<br>requirements specification</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="story.html">Formal design of<br>the game world</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Incremental design of<br>the rules of the game</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Audiovisual design of<br>the game style</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Evolutionary design of<br>game interfaces</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="game_design_document.html">Generation of the<br>game design document</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="confirmDeleteModal" class="modal fade">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation to delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <p class="text-center">Are you sure you want to delete the target audience?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-danger mx-auto" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success mx-auto" id="delete_target_audience" data-bs-dismiss="modal">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmEditModal" class="modal fade">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation to edit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <p class="text-center">Are you sure you want to edit the target audience?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-danger mx-auto" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success mx-auto" id="edit_target_audience" data-bs-dismiss="modal">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="creationModal" class="modal fade">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Warning on creation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <p class="text-center">You can only have one target audience identified at a time!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-primary mx-auto" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-content mt-5 mb-3">
+            <div class="col">
+                <h4 class="text-center">Practice: Goal-oriented requirements specification</h4>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="learning_goals.html">Learning goals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="target_audience.html">Target audience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="goals.html">Goals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="functional_requirements.html">Functional requirements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="non_functional_requirements.html">Non-functional requirements</a>
+                    </li>
+                </ul>
+                <div class="tab-content border border-2 border-top-0 border-primary rounded-bottom">
+                    <div class="row row-content mx-1">
+                        <div class="col-12 col-lg-5 py-4" id="create">
+                            <h5 class="text-center">Identification of target audience</h5><br>
+                            <form id="createTargetAudienceForm" method="POST" action="" autocomplete="off">
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="genre" class="form-label text-end">Genre</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="genre" name="genre" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="age" class="form-label text-end">Age</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="age" name="age" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label class="form-label text-end">Type</label>
+                                    </div>
+                                    <div class="col-7 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="explorer" name="type" value="Explorer" required>
+                                            <label class="form-check-label" for="explorer"> Explorer</label>
+                                        </div>
+                                    </div>
+                                    <div class="offset-4 col-7 offset-lg-0 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="killer" name="type" value="Killer" required>
+                                            <label class="form-check-label" for="killer"> Killer</label>
+                                        </div>
+                                    </div>
+                                    <div class="offset-4 col-7 offset-lg-4 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="socializer" name="type" value="Socializer" required>
+                                            <label class="form-check-label" for="socializer"> Socializer</label>
+                                        </div>
+                                    </div>
+                                    <div class="offset-4 col-7 offset-lg-0 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="achiever" name="type" value="Achiever" required>
+                                            <label class="form-check-label" for="achiever"> Achiever</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="schooling_level" class="form-label text-end">Schooling level</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="schooling_level" name="schooling_level" value="" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="knowledge" class="form-label text-end">Knowledge</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <textarea class="form-control" id="knowledge" rows="5" name="knowledge" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="offset-4 col-3 col-lg-4 offset-lg-4 d-grid gap-2">
+                                        <button type="reset" class="btn btn-danger">Clear</button>
+                                    </div>
+                                    <div class="col-3 col-lg-4 d-grid gap-2">
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                    </div>
+                                </div>   
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-5 py-4" id="edit">
+                            <h5 class="text-center">Edition of target audience</h5><br>
+                            <form id="editTargetAudienceForm" method="POST" action="" autocomplete="off">
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_genre" class="form-label text-end">Genre</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="edit_genre" name="edit_genre" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_age" class="form-label text-end">Age</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="edit_age" name="edit_age" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label class="form-label text-end">Type</label>
+                                    </div>
+                                    <div class="col-7 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="edit_explorer" name="edit_type" value="Explorer" required>
+                                            <label class="form-check-label" for="edit_explorer"> Explorer</label>
+                                        </div>
+                                    </div>
+                                    <div class="offset-4 col-7 offset-lg-0 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="edit_killer" name="edit_type" value="Killer" required>
+                                            <label class="form-check-label" for="edit_killer"> Killer</label>
+                                        </div>
+                                    </div>
+                                    <div class="offset-4 col-7 offset-lg-4 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="edit_socializer" name="edit_type" value="Socializer" required>
+                                            <label class="form-check-label" for="edit_socializer"> Socializer</label>
+                                        </div>
+                                    </div>
+                                    <div class="offset-4 col-7 offset-lg-0 col-lg-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="edit_achiever" name="edit_type" value="Achiever" required>
+                                            <label class="form-check-label" for="edit_achiever"> Achiever</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_schooling_level" class="form-label text-end">Schooling level</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="text" class="form-control" id="edit_schooling_level" name="edit_schooling_level" value="" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 col-lg-4 d-flex justify-content-end">
+                                        <label for="edit_knowledge" class="form-label text-end">Knowledge</label>
+                                    </div>
+                                    <div class="col-7 col-lg-8">
+                                        <textarea class="form-control" id="edit_knowledge" rows="5" name="edit_knowledge" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="offset-4 col-3 col-lg-4 offset-lg-4 d-grid gap-2">
+                                        <button type="button" class="btn btn-danger" id="returnEditButton">Return</button>
+                                    </div>
+                                    <div class="col-3 col-lg-4 d-grid gap-2">
+                                        <button type="button" class="btn btn-success" id="targetAudienceEditButton">Save</button>
+                                    </div>
+                                </div>   
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-7 py-4">
+                            <h5 class="text-center">Management of target audience</h5><br>
+                            <div class="table-responsive mx-4">
+                                <div class="">
+                                    <table class="table table-striped table-hover table-bordered border border-dark border-2">
+                                        <thead class="table-dark align-middle">
+                                            <tr>
+                                            <th scope="col">Genre</th>
+                                            <th scope="col">Age</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Schooling level</th>
+                                            <th scope="col">Knowledge</th>
+                                            <th scope="col">Management</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-body">
+
+                                        </tbody>
+                                    </table>
+                                    <div class="container d-flex justify-content-end my-3">
+                                        <div id="pagination-wrapper"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content my-3"></div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/localstoragedb/localstoragedb.js"></script>
+    <script src="js/target_audience.js"></script>
+</body>
+
+</html>

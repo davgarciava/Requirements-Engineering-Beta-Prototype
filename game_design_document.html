@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Game Design Best Practices</title>
+    <link rel="icon" type="image/png" href="img/GDBP_Logo.png">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-lg bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-auto" href="index.html"><img src="img/GDBP_Logo.png" height="90" width="90"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item bg-light d-flex align-items-center">
+                            <a class="nav-link text-lg-center" href="about_practices.html">About the practices</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="learning_goals.html">Goal-oriented<br>requirements specification</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="story.html">Formal design of<br>the game world</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Incremental design of<br>the rules of the game</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Audiovisual design of<br>the game style</a>
+                    </li>
+                    <li class="nav-item bg-light d-flex align-items-center">
+                        <a class="nav-link text-lg-center" href="#">Evolutionary design of<br>game interfaces</a>
+                    </li>
+                    <li class="nav-item bg-primary d-flex align-items-center">
+                        <a class="nav-link text-lg-center text-white active" href="game_design_document.html">Generation of the<br>game design document</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row row-content mt-5 mb-3">
+            <div class="col">
+                <h4 class="text-center">Final aspects of the game and generation of the game design document</h4>
+            </div>
+        </div>
+        <form class="row row-content mx-1 border border-2 border-primary rounded-bottom" id="generateDocumentForm" method="POST" action="" autocomplete="off">
+            <div class="col-12 col-lg-5 pt-4 py-lg-4">      
+                <div class="row mb-3">
+                    <div class="col-4 col-lg-3 d-flex justify-content-end">
+                        <label for="game_name" class="form-label text-end">Game name</label>
+                    </div>
+                    <div class="col-7 col-lg-9">
+                        <input type="text" class="form-control" id="game_name" name="game_name" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 col-lg-3 d-flex justify-content-end">
+                        <label for="summary" class="form-label text-end">Summary</label>
+                    </div>
+                    <div class="col-7 col-lg-9">
+                        <textarea class="form-control" id="summary" rows="10" name="summary" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 offset-lg-1 col-lg-5 py-lg-4">
+                <div class="row mb-3">
+                    <div class="col-4 col-lg-3 d-flex justify-content-end">
+                        <label for="team_name" class="form-label text-end">Team name</label>
+                    </div>
+                    <div class="col-7 col-lg-9">
+                        <input type="text" class="form-control" id="team_name" name="team_name">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 col-lg-3 d-flex justify-content-end">
+                        <label for="team_members" class="form-label text-end">Team members</label>
+                    </div>
+                    <div class="col-7 col-lg-9">
+                        <textarea class="form-control" id="team_members" rows="5" name="team_members"></textarea>
+                    </div>
+                </div>     
+                <div class="row mb-3">
+                    <div class="col-4 col-lg-3 d-flex justify-content-end">
+                        <label for="company_logo" class="form-label text-end">Company logo</label>
+                    </div>
+                    <div class="col-7 col-lg-9">
+                        <input type="file" accept=".jpg, .jpeg, .png" class="form-control" id="company_logo" name="company_logo">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 col-lg-3 d-flex justify-content-end">
+                        <label for="date" class="form-label text-end">Date</label>
+                    </div>
+                    <div class="col-7 col-lg-9">
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center my-4">
+                <button type="submit" class="btn btn-primary">Generate document</button>
+            </div>
+        </form>
+
+        <div class="row row-content my-3"></div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/localstoragedb/localstoragedb.js"></script>
+    <script src="js/game_design_document.js"></script>
+</body>
+
+</html>

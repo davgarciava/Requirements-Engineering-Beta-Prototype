@@ -1,0 +1,243 @@
+div.relative {
+    position: relative;
+}
+
+.necessity_arises {
+    position: absolute;
+    top: 0px;
+    left: 1320px;
+    width: 132px;
+    height: 132px;
+    border: 0px;
+    background: none;
+}
+
+.knowing_requirement {
+    position: absolute;
+    top: 0px;
+    left: 970px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.making_design {
+    position: absolute;
+    top: 1480px;
+    left: 110px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.developing_game {
+    position: absolute;
+    top: 1600px;
+    left: 110px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.making_game_world {
+    position: absolute;
+    top: 2320px;
+    left: 930px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.target_audience {
+    position: absolute;
+    top: 160px;
+    left: 670px;
+    width: 180px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.learning_goal {
+    position: absolute;
+    top: 520px;
+    left: 670px;
+    width: 180px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.goal {
+    position: absolute;
+    top: 920px;
+    left: 670px;
+    width: 180px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.functional_requirement {
+    position: absolute;
+    top: 1160px;
+    left: 670px;
+    width: 180px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.non_functional_requirement {
+    position: absolute;
+    top: 1320px;
+    left: 650px;
+    width: 220px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.character {
+    position: absolute;
+    top: 1600px;
+    left: 620px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.behavior {
+    position: absolute;
+    top: 1840px;
+    left: 770px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.story {
+    position: absolute;
+    top: 2160px;
+    left: 570px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.narrative {
+    position: absolute;
+    top: 2560px;
+    left: 570px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.game_design_document {
+    position: absolute;
+    top: 1240px;
+    left: 200px;
+    width: 200px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.identifies_target_audience {
+    position: absolute;
+    top: 160px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.specifies_learning_goal {
+    position: absolute;
+    top: 520px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.defines_goal {
+    position: absolute;
+    top: 920px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.establishes_functional_requirement {
+    position: absolute;
+    top: 1160px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.establishes_non_functional_requirement {
+    position: absolute;
+    top: 1320px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.defines_character {
+    position: absolute;
+    top: 1600px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.writes_story {
+    position: absolute;
+    top: 2160px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.proposes_narrative {
+    position: absolute;
+    top: 2560px;
+    left: 1130px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
+
+.creates_design {
+    position: absolute;
+    top: 640px;
+    left: 1360px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background: none;
+}
